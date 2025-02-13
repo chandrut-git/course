@@ -1,0 +1,16 @@
+/* Write your code here: */
+h1,h2{
+    color: blue;
+}
+p.done{
+    color: red;
+}
+.list li{
+    color: blue;
+}
+li.done{
+    color: gray;
+}
+ul p.done{
+    color: black;
+}
