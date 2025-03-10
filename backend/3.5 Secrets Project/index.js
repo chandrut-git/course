@@ -10,11 +10,12 @@ const app = express();
 const port = 3000;
 app.use(bodyParser.urlencoded({extended:true}));
 
-var c=false;
+
 function chec(req,res,next){
+    req.c=false;
     const a=req.body["password"];
     if(a=="ILoveProgramming"){
-        c=true;
+        req.c=true;
     }
     next();
 }
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
   });
 app.post("/check",(req,res,next)=>{
     
-    if(c){
+    if(req.c){
         res.sendFile(__dirname + "/public/secret.html");
       
     }
